@@ -1,0 +1,20 @@
+
+version: "20"
+services:
+  backend:
+    image: "backendimage1"
+    ports:
+      - "3700:3700"
+    networks:
+      - scd-project
+  frontend:
+    image: "frontendscd"
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - scd-project
+
+networks:
+  scd-project:
+    driver: bridge
